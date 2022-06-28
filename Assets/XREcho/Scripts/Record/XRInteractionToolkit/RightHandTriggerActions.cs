@@ -80,9 +80,9 @@ public class RightHandTriggerActions : MonoBehaviour,XRIDefaultInputActions.IXRI
             Vector2 turnVector = context.ReadValue<Vector2>();
             if (turnVector!=nullVector)
             {
-                if (turnVector.x==-1)
+                if (turnVector.x<0)
                     recordingManager.WriteAction("Left","Turn",1,"left");   
-                else if (turnVector.x==1)
+                else if (turnVector.x>0)
                     recordingManager.WriteAction("Left","Turn",1,"right");   
             }
             else if (turnVector==nullVector)
@@ -91,14 +91,7 @@ public class RightHandTriggerActions : MonoBehaviour,XRIDefaultInputActions.IXRI
     }
     public void OnMove(InputAction.CallbackContext context)
     {
-        if (!context.started)
-        {
-            Vector2 moveVector = context.ReadValue<Vector2>();
-            if (moveVector!=nullVector)
-                recordingManager.WriteAction("Right","Move",1,moveVector.x,moveVector.y);
-            else if (moveVector==nullVector)
-                recordingManager.WriteAction("Right","Move",0,0,0);     
-        }
+        
     }
     public void OnRotateAnchor(InputAction.CallbackContext context)
     {

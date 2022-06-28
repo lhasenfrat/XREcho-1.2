@@ -2441,7 +2441,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d4ad91f6de2a7c546912bf3a7d352f93, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  teleportationThreshold: 5
+  teleportationThreshold: 1
 --- !u!1 &1561714391
 GameObject:
   m_ObjectHideFlags: 0
